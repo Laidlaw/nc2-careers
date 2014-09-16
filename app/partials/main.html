@@ -1,0 +1,30 @@
+<div class="container">
+
+  <nav class="navbar">
+    <a href="#">Gulp Angular</a>
+
+    <ul>
+      <li class="active"><a ng-href="#">Home</a></li>
+      <li><a ng-href="#">About</a></li>
+      <li><a ng-href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="col" ng-repeat="job in jobs | orderBy:'rank'">
+    <div class="thumbnail">
+      <img class="pull-right" ng-src="images/{{job.logo}}" alt="{{job.title}}">
+      <div class="caption">
+        <h3>{{job.title}}</h3>
+        <div ng-bind-html="job.description"></div>
+        <p><a ng-href="{{job.url}}">{{job.url}}</a></p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="footer">
+    <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
+  </div>
+
+</div>
